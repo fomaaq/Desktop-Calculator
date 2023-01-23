@@ -49,16 +49,37 @@ label_text.pack()
 
 
 # TODO...
-buttons = ['C', 'del', 'X^2', '=',
-           '1', '2', '3', '/', 
-           '4', '5', '6', '*', 
-           '7', '8', '9', '-', 
-           '+/-', '0', '.', '+']
+buttons = ['C', 'del', 'X^2', '/',
+           '7', '8', '9', '*',
+           '4', '5', '6', '-',
+           '1', '2', '3', '+',
+           '+/-', '0', '.', '=']
 x = 18
 y = 140
 for button in buttons:
     get_label = lambda x=button: calculate(x)
-    tk.Button(text=button, bg='#99CCCC', font=('Segoe', 19), command=get_label).place(x=x, y=y, width=115, height=79)
+
+    if button == 'C':
+        tk.Button(text=button,
+                  bg='#ff6666',
+                  font=('Segoe', 19),
+                  command=get_label).place(x=x, y=y, width=115, height=79)
+    elif button == '=':
+        tk.Button(text=button,
+                  bg='#33CC66',
+                  font=('Segoe', 19),
+                  command=get_label).place(x=x, y=y, width=115, height=79)
+    elif button in ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9'):
+        tk.Button(text=button,
+                  bg='#9ABFCD',
+                  font=('Segoe', 19),
+                  command=get_label).place(x=x, y=y, width=115, height=79)
+    else:
+        tk.Button(text=button,
+                  bg='#99CCCC',
+                  font=('Segoe', 19),
+                  command=get_label).place(x=x, y=y, width=115, height=79)
+
     x += 117
     if x > 400:
         x = 18
