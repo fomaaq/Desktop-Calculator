@@ -1,13 +1,15 @@
 import tkinter as tk
+from window import Window
+
 
 # TODO...
-window = tk.Tk()
-window.title('Calculator')
-window.geometry('500x557')
-window.resizable(False, False)
-icon_photo = tk.PhotoImage(file='imgs/icon_calc.png')
-window.iconphoto(False, icon_photo)
-window.configure(bg='#666666')
+window = Window(title='Calculator',
+                width='500',
+                height='557',
+                is_resizable=False,
+                icon_path='imgs/icon_calc.png',
+                background_color='#666666')
+window.run()
 
 
 def calculate(operation):
