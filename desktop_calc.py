@@ -66,7 +66,7 @@ for button in buttons:
                   command=get_label).place(x=x, y=y, width=115, height=79)
     elif button == '=':
         tk.Button(text=button,
-                  bg='#33CC66',
+                  bg='#9ACDB1',
                   font=('Segoe', 19),
                   command=get_label).place(x=x, y=y, width=115, height=79)
     elif button in ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9'):
