@@ -10,12 +10,35 @@ window.iconphoto(False, icon_photo)
 window.configure(bg='#666666')
 
 
-# TODO...
+# class Window:
+#     def __init__(self, title, width, height, is_resizable, icon_path, background_color):
+#         window = tk.Tk()
+#         window.title(f'{title}')
+#         window.geometry(f'{height}x{width}')
+#         window.resizable(is_resizable, is_resizable)
+
+#         icon_photo = tk.PhotoImage(file=f'{icon_path}')
+#         window.iconphoto(False, icon_photo)
+#         window.configure(bg=f'{background_color}')
+
+#         # calculator = ...
+    
+#     def run(self):
+#         window.mainloop()
+        
+
+# window = Window(...)
+# window.run()
+
+
 def calculate(operation):
+    '''
+    TODO...
+    '''
     global formula
 
     if operation == 'C':
-        formula = ''
+        formula = '0'
 
     elif operation == 'del':
         formula = formula[0:-1]
@@ -33,6 +56,7 @@ def calculate(operation):
         if formula == '0':
             formula = ''
         formula += operation
+
     label_text.configure(text=formula)
 
 
