@@ -1,18 +1,28 @@
-from window import Window
-from label import Label
-from button import Button
+from src.widgets.window import Window
+from src.widgets.label import Label
+from src.widgets.button import Button
+
+_BUTTONS = ['C', 'del', 'X^2', '/',
+            '7', '8', '9', '*',
+            '4', '5', '6', '-',
+            '1', '2', '3', '+',
+            '+/-', '0', '.', '=']
 
 
 class Calculator:
     def __init__(self):
-        self._BUTTONS = ['C', 'del', 'X^2', '/',
-                         '7', '8', '9', '*',
-                         '4', '5', '6', '-',
-                         '1', '2', '3', '+',
-                         '+/-', '0', '.', '=']
+        self._create_formula()
+        self._create_window()
+        self._create_label()
+        self._configure_buttons()
 
+    def run(self):
+        self.window.run()
+
+    def _create_formula(self):
         self.formula = '0'
 
+    def _create_window(self):
         self.window = Window(title='Calculator',
                              width=500,
                              height=557,
@@ -20,12 +30,48 @@ class Calculator:
                              icon_path='imgs/icon_calc.png',
                              background_color='#666666')
 
+    def _create_label(self):
         self.label = Label(initial_text='0')
 
-        self._configure_buttons()
+    def _configure_buttons(self):
+        place_button_x = 18
+        place_button_y = 140
 
-    def run(self):
-        self.window.run()
+        for button in _BUTTONS:
+            button_command = lambda x=button: self._calculate(operation=x)
+
+            if button == 'C':
+                Button(text=button,
+                       background='#cd9898',
+                       command=button_command,
+                       x=place_button_x,
+                       y=place_button_y)
+
+            elif button == '=':
+                Button(text=button,
+                       background='#98cda5',
+                       command=button_command,
+                       x=place_button_x,
+                       y=place_button_y)
+
+            elif button in list('0123456789'):
+                Button(text=button,
+                       background='#9ABFCD',
+                       command=button_command,
+                       x=place_button_x,
+                       y=place_button_y)
+
+            else:
+                Button(text=button,
+                       background='#98b5cd',
+                       command=button_command,
+                       x=place_button_x,
+                       y=place_button_y)
+
+            place_button_x += 117
+            if place_button_x > 400:
+                place_button_x = 18
+                place_button_y += 81
 
     def _calculate(self, operation):
         if operation == 'C':
@@ -49,43 +95,3 @@ class Calculator:
             self.formula += operation
 
         self.label.update_text(new_text=self.formula)
-
-    def _configure_buttons(self):
-        place_button_x = 18
-        place_button_y = 140
-
-        for button in self._BUTTONS:
-            button_command = lambda x=button: self._calculate(operation=x)
-
-            if button == 'C':
-                Button(text=button,
-                       background='#ff6666',
-                       command=button_command,
-                       x=place_button_x,
-                       y=place_button_y)
-
-            elif button == '=':
-                Button(text=button,
-                       background='#9ACDB1',
-                       command=button_command,
-                       x=place_button_x,
-                       y=place_button_y)
-
-            elif button in ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9'):
-                Button(text=button,
-                       background='#9ABFCD',
-                       command=button_command,
-                       x=place_button_x,
-                       y=place_button_y)
-
-            else:
-                Button(text=button,
-                       background='#99CCCC',
-                       command=button_command,
-                       x=place_button_x,
-                       y=place_button_y)
-
-            place_button_x += 117
-            if place_button_x > 400:
-                place_button_x = 18
-                place_button_y += 81

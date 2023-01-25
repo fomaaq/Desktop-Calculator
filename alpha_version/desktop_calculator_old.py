@@ -1,6 +1,5 @@
 import tkinter as tk
 
-# TODO...
 window = tk.Tk()
 window.title('Calculator')
 window.geometry('500x557')
@@ -11,9 +10,6 @@ window.configure(bg='#666666')
 
 
 def calculate(operation):
-    '''
-    TODO...
-    '''
     global formula
 
     if operation == 'C':
@@ -39,7 +35,6 @@ def calculate(operation):
     label_text.configure(text=formula)
 
 
-# TODO...
 formula = '0'
 label_text = tk.Label(anchor='e',
                       text=formula,
@@ -51,7 +46,6 @@ label_text = tk.Label(anchor='e',
 label_text.pack()
 
 
-# TODO...
 buttons = ['C', 'del', 'X^2', '/',
            '7', '8', '9', '*',
            '4', '5', '6', '-',
@@ -79,15 +73,13 @@ for button in buttons:
                   command=get_label).place(x=x, y=y, width=115, height=79)
     else:
         bt = tk.Button(text=button,
-                  bg='#99CCCC',
-                  font=('Segoe', 19),
-                  command=get_label).place(x=x, y=y, width=115, height=79)
+                       bg='#99CCCC',
+                       font=('Segoe', 19),
+                       command=get_label).place(x=x, y=y, width=115, height=79)
 
     x += 117
     if x > 400:
         x = 18
         y += 81
 
-
-# TODO...
 window.mainloop()

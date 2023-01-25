@@ -22,8 +22,6 @@ class Window:
         icon_photo = tk.PhotoImage(file=f'{icon_path}')
         self.window.iconphoto(False, icon_photo)
 
-        # calculator = ...
-
     def run(self):
         '''
         TODO...
