@@ -78,7 +78,7 @@ for button in buttons:
                   font=('Segoe', 19),
                   command=get_label).place(x=x, y=y, width=115, height=79)
     else:
-        tk.Button(text=button,
+        bt = tk.Button(text=button,
                   bg='#99CCCC',
                   font=('Segoe', 19),
                   command=get_label).place(x=x, y=y, width=115, height=79)
