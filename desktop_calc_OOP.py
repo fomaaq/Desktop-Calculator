@@ -1,5 +1,6 @@
 import tkinter as tk
 from window import Window
+from buttons import Button
 
 
 # TODO...
@@ -9,7 +10,6 @@ window = Window(title='Calculator',
                 is_resizable=False,
                 icon_path='imgs/icon_calc.png',
                 background_color='#666666')
-window.run()
 
 
 def calculate(operation):
@@ -59,37 +59,65 @@ buttons = ['C', 'del', 'X^2', '/',
            '4', '5', '6', '-',
            '1', '2', '3', '+',
            '+/-', '0', '.', '=']
-x = 18
-y = 140
+place_button_x = 18
+place_button_y = 140
+button_width = 115
+button_height = 79
+button_font_type = 'Segoe'
+button_font_size = 19
+
 for button in buttons:
     get_label = lambda x=button: calculate(x)
 
     if button == 'C':
-        tk.Button(text=button,
-                  bg='#ff6666',
-                  font=('Segoe', 19),
-                  command=get_label).place(x=x, y=y, width=115, height=79)
-    elif button == '=':
-        tk.Button(text=button,
-                  bg='#9ACDB1',
-                  font=('Segoe', 19),
-                  command=get_label).place(x=x, y=y, width=115, height=79)
-    elif button in ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9'):
-        tk.Button(text=button,
-                  bg='#9ABFCD',
-                  font=('Segoe', 19),
-                  command=get_label).place(x=x, y=y, width=115, height=79)
-    else:
-        tk.Button(text=button,
-                  bg='#99CCCC',
-                  font=('Segoe', 19),
-                  command=get_label).place(x=x, y=y, width=115, height=79)
+        Button(text=button,
+               background='#ff6666',
+               font_type=button_font_type,
+               font_size=button_font_size,
+               command=get_label,
+               x=place_button_x,
+               y=place_button_y,
+               width=button_width,
+               height=button_height)
 
-    x += 117
-    if x > 400:
-        x = 18
-        y += 81
+    elif button == '=':
+        Button(text=button,
+               background='#9ACDB1',
+               font_type=button_font_type,
+               font_size=button_font_size,
+               command=get_label,
+               x=place_button_x,
+               y=place_button_y,
+               width=button_width,
+               height=button_height)
+
+    elif button in ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9'):
+        Button(text=button,
+               background='#9ABFCD',
+               font_type=button_font_type,
+               font_size=button_font_size,
+               command=get_label,
+               x=place_button_x,
+               y=place_button_y,
+               width=button_width,
+               height=button_height)
+
+    else:
+        Button(text=button,
+               background='#99CCCC',
+               font_type=button_font_type,
+               font_size=button_font_size,
+               command=get_label,
+               x=place_button_x,
+               y=place_button_y,
+               width=button_width,
+               height=button_height)
+
+    place_button_x += 117
+    if place_button_x > 400:
+        place_button_x = 18
+        place_button_y += 81
 
 
 # TODO...
-window.mainloop()
+window.run()
