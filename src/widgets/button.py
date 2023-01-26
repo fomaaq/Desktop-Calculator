@@ -27,5 +27,8 @@ class Button:
     def place(self, x: int, y: int):
         '''
         The method places the button
+
+        :param str x: vertical position
+        :param str y: horizontal position
         '''
         self.button.place(x=x, y=y, width=115, height=79)

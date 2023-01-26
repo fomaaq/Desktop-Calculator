@@ -104,6 +104,8 @@ class Calculator:
     def _calculate(self, operation):
         '''
         Performs calculations
+
+        :param str operation: calculation operation
         '''
         # Setting up calculations for various operations
         if operation == 'C':
