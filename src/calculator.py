@@ -44,7 +44,7 @@ class Calculator:
                              width=500,
                              height=557,
                              is_resizable=False,
-                             icon_path='imgs/icon_calc.png',
+                             icon_path='src/widgets/icon_calc.png',
                              background_color='#666666')
 
     def _create_label(self):

@@ -1,5 +1,5 @@
 '''
-The module contains classes and methods for working with the window
+The module contains classes and methods for configuring the window widget
 '''
 
 import tkinter as tk

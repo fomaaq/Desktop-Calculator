@@ -1,5 +1,5 @@
 '''
-The module contains classes and methods for working with buttons
+The module contains classes and methods for configuring the button widget
 '''
 
 import tkinter as tk

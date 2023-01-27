@@ -1,5 +1,5 @@
 '''
-The module contains classes and methods for working with a text label
+The module contains classes and methods for configuring the text label widget
 '''
 
 import tkinter as tk

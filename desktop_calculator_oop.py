@@ -1,3 +1,7 @@
+'''
+The main file of the calculator that runs it
+'''
+
 from src.calculator import Calculator
 
 # Calculator for performing calculations
