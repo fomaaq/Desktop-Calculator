@@ -14,6 +14,7 @@ This is a calculator with GUI and OOP implementation that allows you to perform 
 - - [src/widgets/label.py](https://github.com/fomaaq/desktop_calc/blob/main/src/widgets/label.py) -- ccontains classes and methods for configuring the text label widget
 - - [src/widgets/button.py](https://github.com/fomaaq/desktop_calc/blob/main/src/widgets/button.py) -- contains classes and methods for configuring the button widget
 - - [src/widgets/icon_calc.png](https://github.com/fomaaq/desktop_calc/blob/main/src/widgets/icon_calc.png) -- icon for the window widget
+- [alpha_version/desktop_calculator_old.py](https://github.com/fomaaq/desktop_calc/blob/main/alpha_version/desktop_calculator_old.py) -- alpha version of the calculator without OOP implementation
 
 -- --
 
