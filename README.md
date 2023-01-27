@@ -30,7 +30,9 @@ I created this calculator with GUI for:
 The calculator is controlled using a graphical keyboard
 The calculator can perform basic calculations
 
-Example of calculator operation:![Demo](https://github.com/fomaaq/desktop_calc/blob/main/imgs/demo.gif)
+Example of calculator operation:
+
+![Demo](https://github.com/fomaaq/desktop_calc/blob/main/imgs/demo.gif)
 
 Detailed descriptions of modules and methods are given in the documentation
 
