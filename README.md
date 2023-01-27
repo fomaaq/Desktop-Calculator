@@ -23,6 +23,7 @@ This is a calculator with GUI and OOP implementation that allows you to perform 
 I created this calculator with GUI for:
 - study library for creating a GUI on python
 - create a project with the implementation of OOP
+- implement encapsulation
 
 -- --
 
